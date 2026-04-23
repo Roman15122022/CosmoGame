@@ -1,10 +1,12 @@
 import { Assets, type Texture } from 'pixi.js';
 
+const assetBaseUrl = import.meta.env.BASE_URL;
+
 const assetUrls = {
-  background: '/assets/space-background.svg',
-  ship: '/assets/ship.svg',
-  asteroid: '/assets/asteroid.svg',
-  boss: '/assets/boss.svg',
+  background: `${assetBaseUrl}assets/space-background.svg`,
+  ship: `${assetBaseUrl}assets/ship.svg`,
+  asteroid: `${assetBaseUrl}assets/asteroid.svg`,
+  boss: `${assetBaseUrl}assets/boss.svg`,
 } as const;
 
 export interface GameTextures {
