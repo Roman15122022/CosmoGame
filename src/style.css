@@ -1,0 +1,43 @@
+:root {
+  color-scheme: dark;
+  font-family: Arial, Helvetica, sans-serif;
+  background:
+    radial-gradient(circle at top, rgba(38, 72, 123, 0.35), transparent 32%),
+    radial-gradient(circle at bottom, rgba(151, 33, 76, 0.2), transparent 26%),
+    #02040b;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+}
+
+body {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 18px;
+}
+
+#app {
+  width: min(100vw - 36px, 1280px);
+  aspect-ratio: 16 / 9;
+  border-radius: 28px;
+  overflow: hidden;
+  border: 1px solid rgba(100, 144, 255, 0.25);
+  box-shadow:
+    0 24px 80px rgba(0, 0, 0, 0.55),
+    0 0 0 2px rgba(22, 35, 74, 0.4) inset;
+  background: #02040b;
+}
+
+#app canvas {
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+}
