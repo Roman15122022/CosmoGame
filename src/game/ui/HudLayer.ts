@@ -1,5 +1,5 @@
 import { Container, Graphics, Text } from 'pixi.js';
-import { GAME_WIDTH } from '../data/config';
+import { GAME_WIDTH } from '@data/config';
 
 const HUD_LAYOUT = {
   bulletsX: 28,

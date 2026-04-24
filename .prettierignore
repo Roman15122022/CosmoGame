@@ -1,0 +1,7 @@
+dist
+node_modules
+.playwright-mcp
+coverage
+public/assets/*.svg
+public/favicon.svg
+*.png

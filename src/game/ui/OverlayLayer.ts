@@ -1,5 +1,5 @@
 import { Container, Graphics, Text, type FederatedPointerEvent } from 'pixi.js';
-import { GAME_HEIGHT, GAME_WIDTH } from '../data/config';
+import { GAME_HEIGHT, GAME_WIDTH } from '@data/config';
 
 type OverlayKind = 'menu' | 'result';
 type GameResult = 'win' | 'lose';
@@ -70,10 +70,9 @@ interface OverlayOptions {
   onClick: () => void;
 }
 
-const startSubtitle = [
-  'Move: Left / Right    Shoot: Space',
-  '10 shots per wave. 60 seconds. Boss on level two.',
-].join('\n');
+const startSubtitle = ['Move: Left / Right    Shoot: Space', '10 shots per wave. 60 seconds. Boss on level two.'].join(
+  '\n',
+);
 
 export class OverlayLayer {
   readonly container = new Container();
@@ -93,9 +92,7 @@ export class OverlayLayer {
       kind: 'result',
       title: result === 'win' ? 'YOU WIN' : 'YOU LOSE',
       subtitle:
-        result === 'win'
-          ? 'Sector secured. The boss fleet is gone.'
-          : 'Mission failed. Try a different line of fire.',
+        result === 'win' ? 'Sector secured. The boss fleet is gone.' : 'Mission failed. Try a different line of fire.',
       buttonLabel: 'PLAY AGAIN',
       onClick: onRestart,
     });

@@ -1,7 +1,7 @@
 import { Application } from 'pixi.js';
 import './style.css';
-import { GAME_HEIGHT, GAME_WIDTH } from './game/data/config';
-import { GameController } from './game';
+import { GAME_HEIGHT, GAME_WIDTH } from '@data/config';
+import { GameController } from '@game';
 
 const DEFAULT_RESOLUTION = 1;
 const APP_BACKGROUND_COLOR = '#030711';

@@ -6,8 +6,8 @@ import {
   PLAYER_PREVIEW_SCALE,
   PLAYER_START_Y,
   START_PREVIEW_ASTEROIDS,
-} from '../data/config';
-import { AsteroidEntity, BossEntity, PlayerEntity } from '../entities';
+} from '@data/config';
+import { AsteroidEntity, BossEntity, PlayerEntity } from '@entities';
 
 interface StartPreviewScene {
   player: PlayerEntity;
@@ -45,9 +45,7 @@ export class LevelManager {
   }
 
   createAsteroids(texture: Texture) {
-    return ASTEROID_LAYOUT.map(
-      ({ x, y, scale, rotation }) => new AsteroidEntity(texture, x, y, scale, rotation),
-    );
+    return ASTEROID_LAYOUT.map(({ x, y, scale, rotation }) => new AsteroidEntity(texture, x, y, scale, rotation));
   }
 
   createBoss(texture: Texture) {

@@ -1,4 +1,4 @@
-import { Application, Container, TilingSprite } from 'pixi.js';
+import { Container, TilingSprite, type Application } from 'pixi.js';
 import {
   BACKGROUND_ANIMATION,
   GAME_HEIGHT,
@@ -9,15 +9,16 @@ import {
   PLAYER_PROJECTILE_DIRECTION,
   PLAYER_START_Y,
   START_PREVIEW_ANIMATION,
-} from '../data/config';
-import { loadGameTextures, type GameTextures } from '../data/assets';
-import type { GameState, LevelConfig } from '../data/types';
-import { AsteroidEntity, BossEntity, PlayerEntity, ProjectileEntity } from '../entities';
-import { HudLayer } from '../ui/HudLayer';
-import { OverlayLayer } from '../ui/OverlayLayer';
-import { CollisionSystem } from './CollisionSystem';
-import { InputController } from './InputController';
-import { LevelManager } from './LevelManager';
+} from '@data/config';
+import { loadGameTextures, type GameTextures } from '@data/assets';
+import type { GameState, LevelConfig } from '@data/types';
+import { ProjectileEntity } from '@entities';
+import type { AsteroidEntity, BossEntity, PlayerEntity } from '@entities';
+import { CollisionSystem } from '@core/CollisionSystem';
+import { InputController } from '@core/InputController';
+import { LevelManager } from '@core/LevelManager';
+import { HudLayer } from '@ui/HudLayer';
+import { OverlayLayer } from '@ui/OverlayLayer';
 
 type ResultState = Extract<GameState, 'win' | 'lose'>;
 const ZERO = 0;
@@ -45,7 +46,10 @@ export class GameController {
   private playerProjectiles: ProjectileEntity[] = [];
   private bossProjectiles: ProjectileEntity[] = [];
 
-  private constructor(app: Application, private readonly textures: GameTextures) {
+  private constructor(
+    app: Application,
+    private readonly textures: GameTextures,
+  ) {
     this.app = app;
 
     this.background = new TilingSprite({
